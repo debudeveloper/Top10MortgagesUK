@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Top 10 Mortgages</title>
+	<!-- <link rel="icon" href="favicon.png" type="image/png">
+	<link rel="shortcut icon" href="favicon.ico" type="img/x-icon"> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body style="display:none;">
+		<!--Start_login-->
+
+	<div class="login_Sec">
+		<div class="child_login">
+			<h3>User Login</h3>
+			<form id="loginForm">
+				<div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="popup_input" id="loginEmail" placeholder="Enter email">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="popup_input" id="loginPassword" placeholder="Password">
+					</div>
+					<div class="popup_button">
+						<button type="submit" class="btn btn-default editbutton" style="color:#fff;">Login</button>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+	<!--end_login-->
+<!--request_call_back popup-->
+
+	<div class="modal fade" id="requestCallModal" role="dialog">
+
+		<div class="modal-dialog modal-sm">
+
+			<div class="modal-content">
+				<form id="requestCallForm" novalidate>
+					<div class="modal-header">
+						<button type="button" class="close_button" data-dismiss="modal"><img src="img/close.png" alt=""/></button>
+						<h4 class="modal-title">Request a call back</h4>
+					</div>
+					<div class="modal-body">
+						<div class="col-sm-6 from_detailTextres">
+							<label>Name</label>
+							<input type="text" data-validation="required" name="firstName" id="firstName" placeholder="Enter full name" class="inputform2"
+								required/>
+						</div>
+						<div class="col-sm-6 from_detailTextres">
+							<label>Email</label>
+							<input type="text" data-validation="email" name="email" id="email" placeholder="Enter email" class="inputform2" required/>
+						</div>
+						<div class="clr"></div>
+
+						<div class="col-sm-6 from_detailTextres">
+							<label>Phone Number</label>
+							<input type="text" name="homePhone" id="homePhone" data-validation="ukphone" placeholder="Enter phone number" class="inputform2"
+								required/>
+						</div>
+						<div class="col-sm-6 from_detailTextres">
+							<label>Best Time To Call</label>
+							<select class="inputform2" name="contactTime" id="contactTime" data-validation="required">
+						<option value="">Select...</option>						
+						<option value="1">Morning</option>
+						<option value="2">Afternoon</option>
+						<option value="3">Evening</option>
+						<option value="4">Anytime</option>
+					</select>
+						</div>
+						<div class="clr"></div>
+						<input type="hidden" id="LeadCategory" name="LeadCategory" value="3">
+						<div class="popup_botton_div">
+							<div class="btnName" style="display:none;">Call me back</div>
+							<input type="submit" id="requestSubmit" class="submit_button" value="Call me back">
+						</div>
+					</div>
+					<div class="modal-body2" style="display:none">
+						<img src="img/susic.png" alt="" class="" />
+						<h3>Message sent successfully </h3>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!--End request_call_back popup-->
+
+
+
+	<div class="header">
+		<div class="container">
+			<div class="col-sm-7 logosec no-padding">
+				<a href="index.html"><img src="img/logo.png" alt="call now" class="logo" /></a>
+			</div>
+			<div class="col-sm-5 no-padding">
+				<ul class="callSec">
+					<li>
+						<a href="javascript:void(0);" onclick="callNowClick()"><img src="img/click_herecall_no2.png" alt="call now" class="callNow" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0);"><img src="img/click_herecall_no.png" alt="call now" class="callNow" style="display:none;" /></a>
+					</li>
+					<li>
+						<a href="#" onclick="resetRequestCall()">
+							<img src="img/req_callback.png" alt="Request call now" class="" data-toggle="modal" data-target="#requestCallModal" class="callNow"
+							/>
+						</a>
+					</li>
+					<div class="clr"></div>
+				</ul>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+
+	<div class="footer_menubody">
+	<div class="title_bodyText">
+		<div class="container">
+			<h1><h1><a href="index.html" style="color:#fff; font-size:24px; text-decoration:none;">Home </a> / <span>Privacy policy</span></h1>
+		</div>
+	</div>
+	<div class="clr"></div>
+	<div class="container">
+		<div class="termsText">
+			<h2>The web site.</h2>
+			<p>
+				The ‘website' you are currently visiting is either, a trading style of, or managed and run by, or is owned by, TT Mortgages UK Ltd (Registered in England & Wales no. 08070710) whose registered address is <span>Ollie Rock, Addison Road, Southampton, SO31 7ER</span>. Here in after called The Company, We, Us, Our.  
+			</p>
+			<p>
+				<span>You and Your</span> refers to any one using the web site services/products directly or indirectly through another person. 
+			</p>
+			<h2>The Company and Our services.</h2>
+			<p> 
+				The Company provides advice in the following areas: 
+			</p>
+			<ul>
+				<li>Mortgages – We will advise and make a recommendation for you after we have assessed your needs.</li>
+				<li>
+					Insurance – We will advise and make a recommendation for you after we have assessed your needs for Life Assurance, Critical Illness, Income Protection, Accident Sickness & Unemployment, Home Insurance, and Private Medical Insurance.
+				</li>
+			</ul>
+			<h2>Agreeing to this privacy Policy.</h2>
+			<p>
+				By using this web site You agree to be bound by this Privacy Policy. If You are acting on behalf of any person, whether as agent of not, then You confirm by using this web site, that they have also agreed to be bound by this Privacy Policy.
+			</p>
+			<p>
+				We have the right to update this Privacy Policy. You will be subject to the Privacy Policy that appears on the web site when You use it.  The Privacy Policy appearing at that time applies to Your use at that time.   
+			</p>
+			<h2>
+				Privacy Policy
+			</h2>
+			<p>
+				We want to protect your privacy and confidentiality however we also need to use and process the information you provide us with in order to, run the web site effectively, manage and run Our business, fulfill any service we offer on our web site or so that others who’s services/products We market, can provide services, products, quotes or invitations to You.
+			</p>
+			<p>
+				In order to make the web site as effective as possible We may use cookies. These cookies may store information on Your computer to make future use of Our web site easier to use. We may also monitor how You arrived at Our web site and how You used Our web site. We may monitor which links You used. Links can be tagged so that any commercial payment tied to the use of a link can be correctly made.
+
+			</p>
+			<p>
+				If You wish to disable cookies then You can do so within Your internet browser. This is usually ‘tools’, then ‘options’ and then ‘privacy’ where You can disable cookies. Disabling cookies may mean that certain facilities within web sites do not fully function.
+			</p>
+			<p>
+				We may use Your data to satisfy Our own business needs and that can include passing that data to others. For example during data back up, web hosting, information to Our advisers or bank or any other party who provides services to Us. This can include passing information to regulatory authorities.     
+
+			</p>
+			<p>
+				If We send our e-mails We may include a code that allows us to identify which e-mails have been opened. This helps Us understand which e-mail communications provide the most benefit to web site visitors and customers or are most likely to be opened and read.
+			</p>
+			<p>
+				The owners of The Company also own other companies and in order to reduce costs We may share backroom services between companies. Sharing services can mean sharing data.
+			</p>
+			<p>
+				If We offer a service (whether provided by Us or other) on Our web site then We will use Your data in the provision of that service. The web site will describe the service. 
+			</p>
+			<p>
+				If You are interested in a product or service marketed on Our web site then We may pass Your data to that product or service provider. This will either be at Your request or based on the interest You have shown on this web site.
+			</p>
+			<p>
+				We may use e-mail as a valid communication media. When an e-mail is sent it travels round the internet. We can not control the route taken by e-mail, the level of security they receive on route or which countries they pass through.
+			</p>
+			<p>
+				We may also use Your data as provided for in our data registration with the Information Commissioners Office.  Registration number is <span>Z3168555</span>.
+			</p>
+			<h2>Sensitive and personal data.</h2>
+			<p>
+				If You provide Us with personal or sensitive data then We will take that as Your authority for Us to use that data in any and every way to provide the service to You. This includes passing that data to others.
+			</p>
+			<h2>Right of Access, deletion and correction.</h2>
+			<p>
+				You have the right to access and update your personal data or to require it’s deletion were We have no legal obligation or need to retain Your data any longer. 
+			</p>
+			<p>
+				We endeavour to ensure that personal data is up-to-date, accurate and complete. If you wish to correct your personal data held by us, please contact the <span>mark@helloleads.co.uk</span>. Your requests will be dealt in a prompt and proper manner. No charge will be levied for complying with a correction request.
+			</p>
+			<p>
+				If you wish details of the data we hold about you then we reserve the right to make a small charge of &pound; 10.
+			</p>
+			<p>
+				Requests to delete personal data will be subject to any applicable legal and ethical reporting or document filing or retention obligations imposed on The Company. Certain data We legal have to retain for set time periods. 
+			</p>
+			<p>
+				When You contact Us about data We serve the right to ask You to provide evidence as to Your identity. 
+			</p>
+			<h2>Spamming.</h2>
+			<p>
+				The Company does not condone “spamming”. Spamming is defined as sending unsolicited e-mails, usually of a commercial nature, in large numbers to whom the sender has had no previous contact or who have declined to receive such communications. In contrast, where The Company believes that certain products or other information may be of interest to you, it reserves the right to inform you by e-mail while giving you the choice of opting out of such service. 
+			</p>
+			<p>
+				Where You provide an e-mail address and report that You are interested is a product or service then We may provide You with updates on similar products or services which are accessible through this web site or other web sites which We are connected with.
+			</p>
+			<h2>Contact by third parties.</h2>
+			<p>
+				Where You ask Us to introduce you to a third party, where by specific request or by providing Us Your then are soliciting such contact by whatever communication means.
+			</p>
+			<h2>Links to Other Sites</h2>
+			<p>
+				The privacy policy applies only to his web site websites to the exclusion of third party websites. This web site may provide links to other websites which we believe may be of interest to our visitors. However, due to the nature of the World Wide Web, The Company can not guarantee the standards of every website link it provides or be responsible for the contents of other web sites.
+			</p>
+		</div>
+		<div class="clr"></div>
+	</div>
+</div>
+
+	<div class="footer">
+		<div class="container">
+			<ul>
+				<li><a href="javascript:void(0);">About Us</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Contact Us </a></li>
+				<li>|</li>
+				<li><a href="T&Cs.html">Terms & Conditions</a></li>
+				<li>|</li>
+				<li><a href="privacy_policy.html">Privacy Policy</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Cookie Policy</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Complaint Handling Procedure</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);"> How it works</a></li>
+				<div class="clr"></div>
+			</ul>
+			<p>
+				Think carefully before securing other debts against your home. Your home may be repossessed if you do not keep up repayments
+				on a mortgage or debt secured on it.
+			</p>
+			<!-- <p>Copyright 2011-2016 © www.top10mortgages.co.uk. All rights reserved. Top10Mortgages.co.uk and the logo are registered trademarks of TT mortgage.</p> -->
+			<p>Copyright 2011-2016 © top10mortgagesuk.co.uk is the website for TT Mortgages UK Ltd.</p>
+		</div>
+	</div>
+
+	<!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
+	<div id="test"> </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+	<script type="text/javascript" src="js/myScript.js"></script>
+	<script type="text/javascript" src="js/auth.js"></script>
+	
+</body>
+
+</html>

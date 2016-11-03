@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Top 10 Mortgages</title>
+	<!-- <link rel="icon" href="favicon.png" type="image/png">
+	<link rel="shortcut icon" href="favicon.ico" type="img/x-icon"> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body style="display:none;">
+		<!--Start_login-->
+
+	<div class="login_Sec">
+		<div class="child_login">
+			<h3>User Login</h3>
+			<form id="loginForm">
+				<div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="popup_input" id="loginEmail" placeholder="Enter email">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="popup_input" id="loginPassword" placeholder="Password">
+					</div>
+					<div class="popup_button">
+						<button type="submit" class="btn btn-default editbutton" style="color:#fff;">Login</button>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+	<!--end_login-->
+<!--request_call_back popup-->
+
+	<div class="modal fade" id="requestCallModal" role="dialog">
+
+		<div class="modal-dialog modal-sm">
+
+			<div class="modal-content">
+				<form id="requestCallForm" novalidate>
+					<div class="modal-header">
+						<button type="button" class="close_button" data-dismiss="modal"><img src="img/close.png" alt=""/></button>
+						<h4 class="modal-title">Request a call back</h4>
+					</div>
+					<div class="modal-body">
+						<div class="col-sm-6 from_detailTextres">
+							<label>Name</label>
+							<input type="text" data-validation="required" name="firstName" id="firstName" placeholder="Enter full name" class="inputform2"
+								required/>
+						</div>
+						<div class="col-sm-6 from_detailTextres">
+							<label>Email</label>
+							<input type="text" data-validation="email" name="email" id="email" placeholder="Enter email" class="inputform2" required/>
+						</div>
+						<div class="clr"></div>
+
+						<div class="col-sm-6 from_detailTextres">
+							<label>Phone Number</label>
+							<input type="text" name="homePhone" id="homePhone" data-validation="ukphone" placeholder="Enter phone number" class="inputform2"
+								required/>
+						</div>
+						<div class="col-sm-6 from_detailTextres">
+							<label>Best Time To Call</label>
+							<select class="inputform2" name="contactTime" id="contactTime" data-validation="required">
+						<option value="">Select...</option>						
+						<option value="1">Morning</option>
+						<option value="2">Afternoon</option>
+						<option value="3">Evening</option>
+						<option value="4">Anytime</option>
+					</select>
+						</div>
+						<div class="clr"></div>
+						<input type="hidden" id="LeadCategory" name="LeadCategory" value="3">
+						<div class="popup_botton_div">
+							<div class="btnName" style="display:none;">Call me back</div>
+							<input type="submit" id="requestSubmit" class="submit_button" value="Call me back">
+						</div>
+					</div>
+					<div class="modal-body2" style="display:none">
+						<img src="img/susic.png" alt="" class="" />
+						<h3>Message sent successfully </h3>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!--End request_call_back popup-->
+
+
+
+	<div class="header">
+		<div class="container">
+			<div class="col-sm-7 logosec no-padding">
+				<a href="index.html"><img src="img/logo.png" alt="call now" class="logo" /></a>
+			</div>
+			<div class="col-sm-5 no-padding">
+				<ul class="callSec">
+					<li>
+						<a href="javascript:void(0);" onclick="callNowClick()"><img src="img/click_herecall_no2.png" alt="call now" class="callNow" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0);"><img src="img/click_herecall_no.png" alt="call now" class="callNow" style="display:none;" /></a>
+					</li>
+					<li>
+						<a href="#" onclick="resetRequestCall()">
+							<img src="img/req_callback.png" alt="Request call now" class="" data-toggle="modal" data-target="#requestCallModal" class="callNow"
+							/>
+						</a>
+					</li>
+					<div class="clr"></div>
+				</ul>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+
+	<div class="footer_menubody">
+	<div class="title_bodyText">
+		<div class="container">
+			<h1><a href="index.html" style="color:#fff; font-size:24px; text-decoration:none;">Home </a> / <span>Terms & Conditions</span></h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="termsText">
+			<h2>The web site.</h2>
+			<p>
+				The ‘website' you are currently visiting is either, a trading style of, or managed and run by, or is owned by, TT Mortgages UK Ltd (Registered in England & Wales no. 08070710) whose registered address is <span>Ollie Rock, Addison Road, Southampton, SO31 7ER</span>. Here in after called The Company, We, Us, Our.
+			</p>
+			<p> 
+				<span>You and Your</span> refers to any one using the web site services/products directly or indirectly through another person. 
+			</p>
+			<h2>The Company and Our services.</h2>
+			<p>The Company provides advice in the following areas:</p>
+			<ul>
+				<li>Mortgages – We will advise and make a recommendation for you after we have assessed your needs.</li>
+				<li>
+					Insurance – We will advise and make a recommendation for you after we have assessed your needs for Life Assurance, Critical Illness, Income Protection, Accident Sickness & Unemployment, Home Insurance, and Private Medical Insurance.
+				</li>
+			</ul>
+			<h2>Agreeing to these terms and conditions.</h2>
+			<p>
+				By using this web site You agree to be bound by these terms and conditions. If You are acting on behalf of any person, whether as agent of not, then You confirm by using this web site, that they have also agreed to be bound by these terms and conditions.
+			</p>
+			<p>
+				We have the right to update these terms. You will be subject to the terms and conditions that appear on the web site when You use it.  The terms appearing at that time apply to Your use at that time.  
+			</p>
+			<h2>
+				Client  and customer based internet marketing services.  Your responsibilities and Our liabilities.
+			</h2>
+			<p>
+				Any information or pictures or service or product details We display or describe on the web site is done so in good faith. It is Your responsibility to make certain that any product or service You ultimately purchase or use from the provider matches Your needs.
+			</p>
+			<p>
+				We have no liability for anything provided, said, displayed or described by the provider/suppler of that service or product.  We have no liability for any product or service provided by others.
+			</p>
+			<p>
+				We do not recommend or test any product or service marketed on the web site. You agree that We are under no obligation to check or verify any information, description or picture about a product or service that we receive from others.     
+
+			</p>
+			<p>
+				We receive a commission, fee or payment for marketing products and or services. If We are at fault (by action We have done) in the way We displayed information, descriptions or pictures on the web site then You agree that our maximum liability is limited to the commission, fee or payment We received for marketing that product or service or &pound; 100 whichever is the higher. That liability is limited to direct loss or cost only. This limitation shall not apply to liability for bodily injury or death or Our wilful misconduct or Our fraudulent misrepresentation.
+			</p>
+			<h2>General exclusion of liability for all services We provide.</h2>
+			<p>We exclude all liability for;</p>
+			<ul>
+				<li>
+					the inability or unavailability to use this web site or any connected links at any time for any reason.
+				</li>
+				<li>
+					Computer viruses, spyware, malware and any other harmful code. You must therefore make certain that You have adequate protection against such items.
+				</li>
+				<li>
+					Any unforeseeable, indirect, consequential losses. You must back up data You rely on.
+				</li>
+				<li>
+					For the failure of any internet communication system to operate successfully or confidentially
+				</li>
+				<li>
+					Any loss which is caused by others and is not directly attributable to Our direct negligent act error or omission. 
+				</li>
+			</ul>
+			<h2>Web site access.</h2>
+			<ul>
+				<li>
+					We will endeavour to allow uninterrupted access to the Website, but access to the Website may be suspended, restricted or terminated at any time.
+				</li>
+				<li>
+					We reserve the right to change, modify, substitute, suspend or remove without notice any information or services on the Website from time to time.
+				</li>
+				<li>
+					We assume no responsibility for the content or services of any other websites to or from which the Website has links.
+				</li>
+				<li>
+					Whilst we take effort to keep our web site clean we cannot and will not guarantee that this web-site is free from computer viruses or anything else that has destructive properties.
+				</li>
+			</ul>
+			<h2>Intellectual Property</h2>
+			<ul>
+				<li>
+					The copyright and all other intellectual property rights in the material contained in the Website, together with the website design, text and graphics, logo's, branding and their selection and arrangement, and all software compilations, underlying source code and software (including applets) belongs to us or our licensors. All rights are reserved. None of this material may be reproduced or redistributed without our prior written permission. You may, however, download or print a single copy for your own non-commercial off-line viewing.
+				</li>
+				<li>
+					You shall retain ownership of the data you submit to the Website. You grant us a world-wide, royalty-free, non-terminable licence to use, copy, distribute, publish and transmit such data in any manner.
+				</li>
+			</ul>
+			<h2>Collecting and using Your data.</h2>
+			<p>
+				If Our web site collects any of Your data or if You provide Us with Your data in order for Us to provide Our service, then We will handle Your data as per our Privacy Policy and or as required in order to provide the service. 
+			</p>
+			<p>Where You provide us with data You have the following responsibilities,</p>
+			<ul>
+				<li>
+					That the data You provide is accurate,
+				</li>
+				<li>
+					That if You provide data on behalf of another person then You have obtained their full authority to do so,
+				</li>
+				<li>
+					That any communication address you provide You give us authority to use and have obtained such authority from the owner/regular user and that the communication address provides You with security for any communication We or another party may send You.
+				</li>
+			</ul>
+			<h2>Advice and Recommendations </h2>
+			<p>
+				Any advice or recommendation that we offer to You will be based on Your stated objectives, circumstances and take into account any restrictions that You wish to place on the type of products You would be willing to consider.
+			</p>
+			<p>
+				If You decline to provide information, the advice or recommendations put forward by TT Mortgages UK will be correspondingly restricted and will not take into account all of Your personal circumstances.
+			</p>
+			<p>
+				Full details of the products We may recommend to You including, for example, the minimum duration of the product, information on the right to cancel or whether no right to cancel arises, and any other early termination rights and penalties, will be covered in the relevant product disclosure information you will receive before conclusion of any contract.
+			</p>
+			<p>
+				Any products We have arranged for you, will not be kept under review but we will advise you upon your request. However, We may contact you in the future by means of an unsolicited promotion should We wish to discuss the relative merits of a particular product or service which we feel may be of interest to You.
+			</p>
+			<h2>Choice Of Law And Jurisdiction</h2>
+			<ul>
+				<li>
+					Access to and use of this web-site is conditional upon your agreement to these terms and conditions and that these terms and conditions are governed by and construed in accordance with English law.
+				</li>
+				<li>
+					Both parties agree that any disputes over the terms and conditions or over use of this web site shall be subject to the exclusive jurisdiction of courts in England and Wales to which each party submits.  
+				</li>
+			</ul>
+			<h2>General </h2>	
+			<ul>
+				<li>
+					Should you choose to download, print or copy any content from this web-site, you must do so in accordance with these terms and conditions. Such activity is permitted only for personal use and not for commercial gain. Unless expressly stated otherwise on this web-site all other use of the content is expressly forbidden.
+				</li>
+				<li>
+					You may not assign or otherwise transfer any rights you may accrue under these legal notices. 
+				</li>
+				<li>
+					These terms and conditions are provided only to the extent that they are permitted by law. If any of these terms and conditions are unenforceable in whole or in part, for whatever reason, that exclusion or part exclusion will not affect the validity or enforceability of the remainder of the terms and conditions or part contained herein. 
+				</li>
+			</ul>
+			<h2>Contact by third parties.</h2>
+			<p>
+				Where You ask Us to introduce you to a third party, whether by specific request or by providing Us with Your contact details, then You are soliciting such contact by whatever communication means that provider shall use, provide always that You have provided Us with those contact details.
+			</p>
+			<h2>Our Regulator - The Financial Conduct Authority</h2>
+			<p>
+				We are an appointed representative of Intrinsic Financial Planning Limited, Wiltshire Court, Farnsby Street, Swindon, Wilts. SN1 5HA, which is authorised and regulated by the Financial Conduct Authority.
+			</p>
+			<p>
+				Intrinsic Financial Planning Limited’s FCA Register number is 440703. In cases where we provide mortgage advice, this is covered via Intrinsic Mortgage Planning Limited <span>(FCA Register number 440718)</span>.
+
+			</p>
+			<p>
+				The permitted business of Intrinsic Financial Planning Limited and Intrinsic Mortgage Planning Limited is advising on and arranging pensions, investments, mortgages, life assurance and general insurance.
+			</p>
+		</div>
+		<div class="clr"></div>
+	</div>
+</div>
+
+	<div class="footer">
+		<div class="container">
+			<ul>
+				<li><a href="javascript:void(0);">About Us</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Contact Us </a></li>
+				<li>|</li>
+				<li><a href="T&Cs.html">Terms & Conditions</a></li>
+				<li>|</li>
+				<li><a href="privacy_policy.html">Privacy Policy</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Cookie Policy</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Complaint Handling Procedure</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);"> How it works</a></li>
+				<div class="clr"></div>
+			</ul>
+			<p>
+				Think carefully before securing other debts against your home. Your home may be repossessed if you do not keep up repayments
+				on a mortgage or debt secured on it.
+			</p>
+			<!-- <p>Copyright 2011-2016 © www.top10mortgages.co.uk. All rights reserved. Top10Mortgages.co.uk and the logo are registered trademarks of TT mortgage.</p> -->
+			<p>Copyright 2011-2016 © top10mortgagesuk.co.uk is the website for TT Mortgages UK Ltd.</p>
+		</div>
+	</div>
+
+	<!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
+	<div id="test"> </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+	<script type="text/javascript" src="js/myScript.js"></script>
+	<script type="text/javascript" src="js/auth.js"></script>
+</body>
+
+</html>

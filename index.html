@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Top 10 Mortgages</title>
+	<!-- <link rel="icon" href="favicon.png" type="image/png">
+	<link rel="shortcut icon" href="favicon.ico" type="img/x-icon"> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body style="display:none;">
+
+	<!--Start_login-->
+
+	<div class="login_Sec">
+		<div class="child_login">
+			<h3>User Login</h3>
+			<form id="loginForm">
+				<div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="popup_input" id="loginEmail" placeholder="Enter email">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="popup_input" id="loginPassword" placeholder="Password">
+					</div>
+					<div class="popup_button">
+						<button type="submit" class="btn btn-default editbutton" style="color:#fff;">Login</button>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+	<!--end_login-->
+
+	<!--request_call_back popup-->
+
+	<div class="modal fade" id="requestCallModal" role="dialog">
+
+		<div class="modal-dialog modal-sm">
+
+			<div class="modal-content">
+				<form id="requestCallForm" novalidate>
+					<div class="modal-header">
+						<button type="button" class="close_button" data-dismiss="modal"><img src="img/close.png" alt=""/></button>
+						<h4 class="modal-title">Request a call back</h4>
+					</div>
+					<div class="modal-body">
+						<div class="col-sm-6 from_detailTextres">
+							<label>Name</label>
+							<input type="text" data-validation="required" name="firstName" id="firstName" placeholder="Enter full name" class="inputform2"
+								required/>
+						</div>
+						<div class="col-sm-6 from_detailTextres">
+							<label>Email</label>
+							<input type="text" data-validation="email" name="email" id="email" placeholder="Enter email" class="inputform2" required/>
+						</div>
+						<div class="clr"></div>
+
+						<div class="col-sm-6 from_detailTextres">
+							<label>Phone Number</label>
+							<input type="text" name="homePhone" id="homePhone" data-validation="ukphone" placeholder="Enter phone number" class="inputform2"
+								required/>
+						</div>
+						<div class="col-sm-6 from_detailTextres">
+							<label>Best Time To Call</label>
+							<select class="inputform2" name="contactTime" id="contactTime" data-validation="required">
+						<option value="">Select...</option>						
+						<option value="1">Morning</option>
+						<option value="2">Afternoon</option>
+						<option value="3">Evening</option>
+						<option value="4">Anytime</option>
+					</select>
+						</div>
+						<div class="clr"></div>
+						<input type="hidden" id="LeadCategory" name="LeadCategory" value="3">
+						<div class="popup_botton_div">
+							<div class="btnName" style="display:none;">Call me back</div>
+							<input type="submit" id="requestSubmit" class="submit_button" value="Call me back">
+						</div>
+					</div>
+					<div class="modal-body2" style="display:none">
+						<img src="img/susic.png" alt="" class="" />
+						<h3>Message sent successfully </h3>
+					</div>
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!--End request_call_back popup-->
+
+
+
+	<div class="header">
+		<div class="container">
+			<div class="col-sm-7 logosec no-padding">
+				<a href="index.html"><img src="img/logo.png" alt="call now" class="logo" /></a>
+			</div>
+			<div class="col-sm-5 no-padding">
+				<ul class="callSec">
+					<li>
+						<a href="javascript:void(0);" onclick="callNowClick()"><img src="img/click_herecall_no2.png" alt="call now" class="callNow" /></a>
+					</li>
+					<li>
+						<a href="javascript:void(0);"><img src="img/click_herecall_no.png" alt="call now" class="callNow" style="display:none;" /></a>
+					</li>
+					<li>
+						<a href="#" onclick="resetRequestCall()">
+							<img src="img/req_callback.png" alt="Request call now" class="" data-toggle="modal" data-target="#requestCallModal" class="callNow"
+							/>
+						</a>
+					</li>
+					<div class="clr"></div>
+				</ul>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+
+	<div class="allbody">
+		<div class="container">
+			<div class="col-sm-7 body_lefttext no-padding">
+				<h2>
+					<span>Give us 10 minutes</span> and you will receive a list of the <span>top 10 mortgages</span> and a personal mortgage
+					quote,
+					<span> free with no obligation</span>
+				</h2>
+				<!-- <h2>
+				Always remember – <span>Your home may be repossessed</span>  <br/> if you do not <span>keep up repayments</span> on your mortgage
+			</h2> -->
+				<div class="body_Lefttext">
+					<!-- <h2>Confused? Need Help? Speak to a mortgage expert now!</h2> -->
+					<p>
+						TT Mortgages UK are here to offer you free first class mortgage advice. Our expert advisers will help you secure the best
+						mortgage deal whether you are looking to remortgage to a better rate, purchase your first home, selling your home to
+						buy a new one, or buying to let. Your own personal adviser will be on hand to assist and guide you throughout the whole
+						process, from your first point of contact through to the completion of your mortgage.
+						<span style="font-weight:600;">Your satisfaction is our priority.</span>
+					</p>
+					<h3>What you will get from us:</h3>
+					<ul class="bodyNav">
+						<li>Access to the whole of the mortgage market</li>
+						<li>Free no obligation, top 10 list and personalised quotes</li>
+						<li>The best deal for your needs</li>
+						<li>Fast, friendly and professional service</li>
+						<li>Straight talking but expert advice</li>
+						<li>Access to exclusive rates from selected lender</li>
+						<li>Your own personal mortgage adviser</li>
+						<li>A helping hand to guide you through the whole process</li>
+						<!-- <li>Been refused by your own bank or lender for any reason</li> -->
+						<li>Help if you have been refused by your own bank or lender </li>
+
+					</ul>
+					<p>
+						Always remember – Your home may be repossessed if you do not keep up repayments on your mortgage
+					</p>
+				</div>
+				<div class="brand_div">
+					<p style="font-weight:500; margin:0;">Compare leading lenders including...</p>
+					<ul>
+						<li><img src="img/brand_1.jpg" alt="brandpic" class="brand_PIC" /></li>
+						<li><img src="img/brand_2.jpg" alt="brandpic" class="brand_PIC" /></li>
+						<li><img src="img/brand_3.jpg" alt="brandpic" class="brand_PIC" /></li>
+						<li><img src="img/brand_4.jpg" alt="brandpic" class="brand_PIC" /></li>
+						<li><img src="img/brand_7.jpg" alt="brandpic" class="brand_PIC" /></li>
+						<li><img src="img/brand_5.jpg" alt="brandpic" class="brand_PIC" /></li>
+						<li><img src="img/brand_6.jpg" alt="brandpic" class="brand_PIC" /></li>
+						<div class="clr"></div>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-5 no-padding">
+				<div class="form_section">
+					<h2>Start Your Mortgage Enquiry Now</h2>
+					<p>It’s all very simple, free for you to use and with absolutely no obligations! Simply answer a few short questions on
+						the form below</p>
+					<form id="homeForm" method="POST" novalidate>
+						<div class="child_formsection">
+							<!-- <h3>Your Details <span>Step 1 of 2</span></h3> -->
+							<div class="your_detail">
+
+								<div class="col-sm-6 res_section3">
+									<div class="col-sm-4 col-xs-4 res_section3">
+										<label class="homelabel">Title</label>
+										<select class="inputform" name="Title" id="Title" type="select-one" style="padding:5px 1px;">
+										<option value="Mr">Mr</option>
+										<option value="Mrs">Mrs</option>
+										<option value="Miss">Miss</option>
+										<option value="Ms">Ms</option>
+									</select>
+									</div>
+									<div class="col-sm-8 col-xs-8 res_section2">
+										<label>First Name</label>
+										<input type="text" data-validation="required" name="firstName" id="firstName" placeholder="Enter first name" class="inputform"
+											required="">
+									</div>
+								</div>
+								<div class="col-sm-6 res_section3">
+									<label>Last Name</label>
+									<input type="text" data-validation="required" name="lastName" id="lastName" placeholder="Enter last name" class="inputform"
+										required="">
+								</div>
+								<div class="clr"></div>
+
+								<div class="col-sm-6 res_section3">
+									<label>Mobile Number</label>
+									<input type="text" data-validation="required" data-validation="ukphone" name="homePhone" id="homePhone" placeholder="Enter mobile no."
+										class="inputform" required="">
+								</div>
+								<div class="col-sm-6 res_section3">
+									<label>Alternative Number</label>
+									<input type="text" data-validation="ukphone" data-validation-optional="true" name="workphone" id="workphone" placeholder="Enter alternative no."
+										class="inputform" required="">
+								</div>
+								<div class="clr"></div>
+
+								<div class="col-sm-6 res_section3">
+									<label>Email Address</label>
+									<input type="text" data-validation="required" name="email" id="email" placeholder="Enter email address" class="inputform"
+										required="">
+								</div>
+								<div class="col-sm-6 res_section3">
+									<label class="homelabel">Post Code</label>
+									<input type="text" data-validation="required" name="postcode" id="postcode" data-validation="ukpostcode" placeholder="Enter postcode"
+										class="inputform" required="">
+								</div>
+								<div class="clr"></div>
+
+								<div class="col-sm-6 res_section3">
+									<label>House name or number</label>
+									<input type="text" data-validation="required" name="address1" id="address1" placeholder="Enter house name or no." class="inputform"
+										required="">
+								</div>
+								<div class="col-sm-6 res_section3">
+									<label>Looking for</label>
+									<select class="inputform" name="ProductName" id="ProductName" type="select-one">
+									<option value="Residential Remortgage">Residential Remortgage </option>
+									<option value="Residential Purchase">Residential Purchase </option>
+									<option value="Buy To Let Remortgage">Buy to Let Remortgage </option>
+									<option value="Buy To Let Purchase">Buy to Let Purchase</option>
+									<option value="Other Mortgage">Other</option>
+								</select>
+								</div>
+								<div class="clr"></div>
+
+								<div class="col-sm-6 res_section3">
+									<label>Value of property ( &pound; )</label>
+									<input type="text" data-validation="number" name="PropertyValue" id="PropertyValue" placeholder="Enter value of property"
+										class="inputform" required="">
+								</div>
+								<div class="col-sm-6 res_section3">
+									<label>Mortgage amount ( &pound; ) </label>
+									<input type="text" data-validation="number" name="LoanValue" id="LoanValue" placeholder="Enter mortgage amount" class="inputform"
+										required="">
+								</div>
+								<div class="clr"></div>
+
+								<div class="col-sm-6 res_section3">
+									<label>Term</label>
+									<select name="Period" id="Period" class="inputform" type="select-one">
+										<option value="5">5 years</option>
+										<option value="6">6 years</option>
+										<option value="7">7 years</option>
+										<option value="8">8 years</option>
+										<option value="9">9 years</option>
+										<option value="10">10 years</option>
+										<option value="11">11 years</option>
+										<option value="12">12 years</option>
+										<option value="13">13 years</option>
+										<option value="14">14 years</option>
+										<option value="15">15 years</option>
+										<option value="16">16 years</option>
+										<option value="17">17 years</option>
+										<option value="18">18 years</option>
+										<option value="19">19 years</option>
+										<option value="20">20 years</option>
+										<option value="21">21 years</option>
+										<option value="22">22 years</option>
+										<option value="23">23 years</option>
+										<option value="24">24 years</option>
+										<option selected="selected" value="25">25 years</option>
+										<option value="26">26 years</option>
+										<option value="27">27 years</option>
+										<option value="28">28 years</option>
+										<option value="29">29 years</option>
+										<option value="30">30 years</option>
+										<option value="31">31 years</option>
+										<option value="32">32 years</option>
+										<option value="33">33 years</option>
+										<option value="34">34 years</option>
+										<option value="35">35 years</option>
+										<option value="36">36 years</option>
+										<option value="37">37 years</option>
+										<option value="38">38 years</option>
+										<option value="39">39 years</option>
+										<option value="40">40 years</option>
+									</select>
+								</div>
+								<div class="col-sm-6 res_section3">
+									<label>Type of rate</label>
+									<select class="inputform" name="RateType" id="RateType" type="select-one">
+									<option value="1">Fixed</option>
+									<option value="4">Tracker </option>
+									<option value="2">Variable </option>
+									<option value="5">Not sure</option>
+								</select>
+								</div>
+								<div class="clr"></div>
+
+							</div>
+						</div>
+						<div class="missed_div">
+							<div class="col-sm-10" style="padding-left:0;">
+								<p>
+									I have missed a mortgage or loan repayment in the past 36 months or been declared bankrupt, had CCJ’s, Defaults or entered
+									into an IVA in the past 6 years?
+								</p>
+							</div>
+							<div class="col-sm-2 no-padding">
+								<select class="inputformNo" name="AdverseCredit" id="AdverseCredit" type="select-one">
+									<option value="false">No </option>
+								<option value="true">yes</option>								
+							</select>
+							</div>
+							<div class="clr"></div>
+							<p>
+								By using this form you are consenting to your information being passed to a mortgage broker or appointed representative who
+								will contact you. This information may be used by us or selected partners to advise you of other useful products
+								or services that we feel you would be interested in.
+							</p>
+						</div>
+						<input type="hidden" id="LeadCategory" name="LeadCategory" value="1">
+						<!--success Modal popup-->
+
+						<div class="modal fade" id="successModal" role="dialog">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close_button" data-dismiss="modal"><img src="img/close.png" alt=""/></button>
+										<h4 class="modal-title">Successfully Submit</h4>
+									</div>
+									<div class="modal-body2" style="display:none">
+										<img src="img/susic.png" alt="" class="" />
+										<h3>Message sent successfully </h3>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--End success Modal popup-->
+						<div class="send_req">
+							<div class="btnName" style="display:none;">Submit</div>
+							<input type="submit" id="homeFormSubmit" class="submit_buttonnew" value="Submit">
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="clr"></div>
+		</div>
+	</div>
+
+	<div class="middle_body">
+		<div class="container">
+			<!-- <p>Confused ? Need Help ? Speak to a mortgage expert now: <span> 01489 232 121.</span></p> -->
+			<p style="font-weight:500;">
+				Have you had problems in obtaining a mortgage? We have access to lenders from the whole of the mortgage market with varying
+				criteria, just because one lender says NO does not mean they will all say NO, We have helped clients with; and can help
+				you if you are:
+			</p>
+			<ul>
+				<li>Self-employed – with only 1 years accounts</li>
+				<li>Short/Fixed term contractors</li>
+				<li>Sub-Contractors on Construction Industry Scheme CIS</li>
+				<li>Lower or poor credit score</li>
+				<li>Just about to or not started new job yet</li>
+				<li>Older or retired </li>
+				<li>On interest only and want to change to repayment</li>
+				<li>On repayment and want to change to interest only</li>
+				<li>Been refused by your own bank or lender for any reason</li>
+			</ul>
+			<p>
+				We will research all possibilities for you and leave no stone unturned in finding you the right mortgage, please call and
+				speak to one of our qualified mortgage experts for a free no obligation chat <span>01489 232 121</span>.
+			</p>
+			<h3>No fees for</h3>
+			<ul>
+				<li>Advice</li>
+				<li>Research</li>
+				<li>Quotes</li>
+				<li>Agreements/Decision in principles</li>
+				<li>Just a general chat</li>
+			</ul>
+			<!-- <p>
+			At any stage of prior to application you wish not to continue you will not be charged or liable for any fees.<span><a href="#collapseExample" id="readMore" data-toggle="collapse" aria-expanded="false" >Reed More...</a></span>
+		</p> -->
+			<p>
+				At any stage of prior to application you wish not to continue you will not be charged or liable for any fees.
+			</p>
+			<p>
+				We are qualified expert mortgage advisers who have access to the whole of the mortgage market; with just a 10 minute chat
+				we can provide you with advice and a detailed quote on the best products that suit your needs –<span> NO FEE and NO OBLIGATION. </span>
+			</p>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			<ul>
+				<li><a href="javascript:void(0);">About Us</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Contact Us </a></li>
+				<li>|</li>
+				<li><a href="T&Cs.html">Terms & Conditions</a></li>
+				<li>|</li>
+				<li><a href="privacy_policy.html">Privacy Policy</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Cookie Policy</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);">Complaint Handling Procedure</a></li>
+				<li>|</li>
+				<li><a href="javascript:void(0);"> How it works</a></li>
+				<div class="clr"></div>
+			</ul>
+			<p>
+				Think carefully before securing other debts against your home. Your home may be repossessed if you do not keep up repayments
+				on a mortgage or debt secured on it.
+			</p>
+			<!-- <p>Copyright 2011-2016 © www.top10mortgages.co.uk. All rights reserved. Top10Mortgages.co.uk and the logo are registered trademarks of TT mortgage.</p> -->
+			<p>Copyright 2011-2016 © top10mortgagesuk.co.uk is the website for TT Mortgages UK Ltd.</p>
+		</div>
+	</div>
+
+	<!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
+	<div id="test"> </div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+	<script type="text/javascript" src="js/myScript.js"></script>
+	<script type="text/javascript" src="js/auth.js"></script>
+
+</body>
+
+</html>
